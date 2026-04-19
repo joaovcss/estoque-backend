@@ -1,4 +1,4 @@
-import { CreateProductDTO } from "./productDTO";
+import { CreateProductDTO, UpdateProductDTO } from "./productDTO";
 import { Product } from "./productModel";
 import { ProductRepository } from "./productRepository";
 
@@ -19,6 +19,10 @@ export class ProductService {
     }
 
     return this.productRepository.create(data)
+  }
+
+  async update(id: number, data: UpdateProductDTO): Promise<Product> {
+    return this.productRepository.update(id, data)
   }
 
   async delete(id: number): Promise<Product> {
