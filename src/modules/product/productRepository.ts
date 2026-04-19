@@ -28,5 +28,12 @@ export class ProductRepository {
     )
     return newProduct.rows[0]
   }
+
+  public async delete(id: number): Promise<Product> {
+    const deletedProduct = await pool.query(
+      `DELETE FROM produtos WHERE id = $1 RETURNING *`, [id]
+    )
+    return deletedProduct.rows[0]
+  }
 }
 

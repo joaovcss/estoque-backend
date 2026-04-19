@@ -13,4 +13,10 @@ export class ProductController {
     const product = await this.productService.create(req.body)
     res.status(201).json(product)
   }
-} 
+
+  delete: Handler = async (req, res) => {
+    const id = Number(req.params.id)
+    const product = await this.productService.delete(id)
+    res.status(204)
+  }
+}

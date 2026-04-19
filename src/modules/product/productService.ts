@@ -20,4 +20,8 @@ export class ProductService {
 
     return this.productRepository.create(data)
   }
+
+  async delete(id: number): Promise<Product> {
+    return this.productRepository.delete(id)
+  }
 }
