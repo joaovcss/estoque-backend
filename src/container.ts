@@ -6,13 +6,9 @@ import { ProductRepository } from "./modules/product/productRepository";
 import { ProductService } from "./modules/product/productService";
 
 export const categoriesRepository = new CategoriesRepository()
-
 export const categoriesService = new CategoriesService(categoriesRepository)
-
 export const categoriesController = new CategoriesController(categoriesService)
 
 export const productRepository = new ProductRepository()
-
 export const productService = new ProductService(productRepository)
-
 export const productController = new ProductController(productService)
