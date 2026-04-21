@@ -1,7 +1,10 @@
 import { Router } from "express";
-import { productController } from "../container";
+import { categoriesController, productController } from "../container";
 
 const router = Router()
+
+router.get("/categorias", categoriesController.findAll)
+router.post("/categorias", categoriesController.create)
 
 router.get("/produtos", productController.findAll)
 router.post("/produtos", productController.create)
