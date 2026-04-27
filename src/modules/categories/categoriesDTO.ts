@@ -1,5 +1,9 @@
 interface CreateCategoryDTO {
-  nome: string
+  nome: string;
 }
 
-export { CreateCategoryDTO }
+interface UpdateCategoryDTO {
+  nome?: string;
+}
+
+export { CreateCategoryDTO, UpdateCategoryDTO }
